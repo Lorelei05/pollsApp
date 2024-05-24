@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Vota{% endblock title %}
+
+{% block content %}
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+    <h2>Elige bien<h2>
+    {% for c in question.choice_set.all %}
+    <li>{{ c.choice_text }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

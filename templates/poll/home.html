@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Encuestas{% endblock %}
+
+{% block content %}
+<h1>Encuestas</h1>
+
+<ul>
+    {% for q in questions %}
+    <li><a href="{% url 'poll:vote' q.id %}">{{q}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
