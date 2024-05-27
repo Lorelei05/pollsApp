@@ -3,12 +3,14 @@
 
 {% block content %}
 <h1>{{ question.question_text }}</h1>
-
-<ul>
-    <h2>Elige bien<h2>
+<form method="post">
+    {% csrf_token %}
     {% for c in question.choice_set.all %}
-    <li>{{ c.choice_text }}</li>
+    <input type="radio" name="choice" id="c_{{ c.id }}" value="{{ c.id }}">
+    <label for="c_{{ c.id}}">{{ c.choice_text }}</label>
+    <br>
     {% endfor %}
-</ul>
+    <input type="submit" value="Votar">
+</form>
 {% endblock %}
 
