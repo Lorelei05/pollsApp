@@ -9,6 +9,7 @@
     <li>{{ c.choice_text }} - {{ c.votes }} vote{{ c.votes | pluralize }} </li>
     {% endfor %}
 </ul>
+<img src="data:image/png;base64,{{ graph }}" alt="Gráfico de resultados">
 <hr>
 <a href="{% url 'poll:home' %}">Encuestas</a>
 
